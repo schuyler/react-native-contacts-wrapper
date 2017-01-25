@@ -130,6 +130,9 @@ RCT_EXPORT_METHOD(getEmail:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseR
       NSString *fullName = [self getFullNameForFirst:contact.givenName middle:contact.middleName last:contact.familyName ];
       NSArray *phoneNos = contact.phoneNumbers;
       NSArray *emailAddresses = contact.emailAddresses;
+
+      //Return record identifier
+      [contactData setValue:contact.identifier forKey:@"identifier"]
       
       //Return full name
       [contactData setValue:fullName forKey:@"name"];
